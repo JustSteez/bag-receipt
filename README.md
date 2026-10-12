@@ -2,7 +2,7 @@
 
 Paste a wallet and a token contract address on **Robinhood Chain**. Get a printed receipt of every buy, every sell, what the bag is worth now, and your total P&L. Save it as an image and post it.
 
-**Live:** https://bag-receipt.vercel.app
+**Live:** https://bagreceipt.xyz
 
 ![Bag Receipt](og.jpg)
 
