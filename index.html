@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Bag Receipt</title>
+  <meta name="description" content="Paste a wallet and a token on Robinhood Chain. Get a printed receipt of every buy, every sell, and what your bag is worth." />
+  <meta property="og:title" content="Bag Receipt" />
+  <meta property="og:description" content="Every buy. Every sell. Printed. For any token on Robinhood Chain." />
+  <meta property="og:image" content="https://bag-receipt.vercel.app/og.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" crossorigin="anonymous" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,800&family=JetBrains+Mono:wght@400;700;800&display=swap" />
+  <link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+  <main class="shop">
+    <header class="masthead">
+      <p class="eyebrow">Robinhood Chain · read-only · no wallet connect</p>
+      <h1>Bag <span>Receipt</span></h1>
+      <p class="lede">Paste your wallet and a token. Get a printed receipt of every buy, every sell, and what the bag is worth now.</p>
+    </header>
+
+    <form id="form" class="register" autocomplete="off" novalidate>
+      <label>
+        <span>Token contract address</span>
+        <input id="token" name="token" placeholder="0x… token CA" spellcheck="false" inputmode="text" required />
+      </label>
+      <label>
+        <span>Your wallet</span>
+        <input id="wallet" name="wallet" placeholder="0x… wallet address" spellcheck="false" inputmode="text" required />
+      </label>
+      <button id="print" type="submit">Print receipt</button>
+      <p id="error" class="error" role="alert" hidden></p>
+    </form>
+
+    <section id="printer" class="printer" aria-live="polite" hidden>
+      <div class="slot"></div>
+      <p id="status" class="status">Warming up the printer…</p>
+      <div class="bar"><i id="progress"></i></div>
+    </section>
+
+    <section id="out" class="out" hidden>
+      <div class="slot"></div>
+      <article id="receipt" class="receipt" aria-label="Bag receipt"></article>
+      <div class="actions">
+        <button id="download" type="button">Save image</button>
+        <button id="share" type="button" class="ghost">Post on X</button>
+        <button id="copy" type="button" class="ghost">Copy link</button>
+      </div>
+    </section>
+
+    <footer class="foot">
+      <p>Reads public data from the Robinhood Chain RPC and DexScreener in your browser. No server, no tracking, nothing to sign.
+        USD values use today's ETH price. Not financial advice. Not affiliated with Robinhood.</p>    </footer>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/html-to-image@1.11.11/dist/html-to-image.js" integrity="sha384-UbfRVKN3/elS1r7JcK2FhmPP+KlJ4CvYwbyYD7tH+uTkbT9bNJr9eJeQ0FoFbAgz" crossorigin="anonymous"></script>
+  <script type="module" src="/app.js"></script>
+</body>
+</html>
