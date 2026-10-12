@@ -135,7 +135,7 @@ function renderReceipt(r) {
     el('div', { class: 'r-center' },
       el('p', { class: 'r-hash' }, short(lines.at(-1)?.hash || r.token)),
       el('p', { class: 'r-thanks' }, 'THANK YOU FOR YOUR LIQUIDITY'),
-      el('p', { class: 'r-sub' }, 'bag-receipt · no refunds'),
+      el('p', { class: 'r-sub' }, 'bagreceipt.xyz · no refunds'),
     ),
   ];
   ui.receipt.replaceChildren(...parts.filter(Boolean));
