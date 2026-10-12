@@ -214,6 +214,7 @@ $('share').addEventListener('click', () => {
   const intent = new URL('https://x.com/intent/post');
   intent.searchParams.set('text', text);
   intent.searchParams.set('url', shareUrl(current));
+  intent.searchParams.set('via', 'bagreceipt_xyz');
   window.open(intent.toString(), '_blank', 'noopener');
 });
 
