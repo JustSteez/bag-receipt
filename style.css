@@ -78,6 +78,18 @@ h1 span { color: var(--lime); }
   line-height: 1.4;
 }
 
+.ca {
+  display: flex; align-items: center; gap: 10px;
+  margin: -12px 0 28px; padding: 8px 8px 8px 12px;
+  border-radius: 12px; background: #0d0f0b; border: 1px dashed #3a4030;
+}
+.ca-tag { flex-shrink: 0; font: 800 12px/1 var(--font-mono); color: var(--lime); letter-spacing: 0.02em; }
+.ca-addr {
+  flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+  font: 400 12.5px/1 var(--font-mono); color: var(--ink-page); user-select: all;
+}
+.ca-copy { flex-shrink: 0; padding: 8px 12px; font-size: 13px; border-radius: 8px; }
+.foot-ca { word-break: break-all; color: var(--muted-page); user-select: all; }
 .register {
   display: grid;
   gap: 14px;

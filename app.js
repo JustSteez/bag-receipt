@@ -230,6 +230,17 @@ $('copy').addEventListener('click', async () => {
   setTimeout(() => { btn.textContent = 'Copy link'; }, 1500);
 });
 
+$('ca-copy').addEventListener('click', async () => {
+  const btn = $('ca-copy');
+  try {
+    await navigator.clipboard.writeText($('ca-addr').textContent.trim());
+    btn.textContent = 'Copied ✓';
+  } catch {
+    btn.textContent = 'Copy failed';
+  }
+  setTimeout(() => { btn.textContent = 'Copy CA'; }, 1500);
+});
+
 const params = new URLSearchParams(location.search);
 const pre = { t: params.get('t'), w: params.get('w') };
 if (pre.t) ui.token.value = pre.t;
